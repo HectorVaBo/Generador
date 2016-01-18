@@ -1,0 +1,119 @@
+<html>
+	<head>
+<title>Generador</title>
+		<meta charset="UTF8"/>
+		<style type="text/css">
+			table {
+				border-collapse: collapse;
+			}
+			table, td, th {
+				border: 1px solid green;
+			}
+			th {
+				background-color: green;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			Opciones de la Base de Datos a generar...
+		</p>
+		<table id="customers" id="dataTable" >
+			<tr>
+				<th>Id</th>
+				<th>Nombre de Columna</th>
+				<th>Tipo de dato</th>
+				<th>Accción</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>
+				<INPUT type="text" >
+				</td>
+				<td>
+				<SELECT NAME="tipo1">
+					<OPTION SELECTED> Tipo de dato <OPTION> Humanos <OPTION> Geograficos <OPTION> Aleatorio
+				</SELECT></td>
+				<td>
+				<input type="button" value="Eliminar" onclick="Eliminar(this.parentNode.parentNode.rowIndex)"/>
+				</td>
+			</tr>
+			<tr class="alt">
+				<td>2</td>
+				<td>
+				<INPUT type="text" >
+				</td>
+				<td><SELECT NAME="tipo2">
+					<OPTION SELECTED> Tipo de dato <OPTION> Humanos <OPTION> Geograficos <OPTION> Aleatorio
+				</SELECT></td></td>
+				<td>
+				<input type="button" value="Eliminar" onclick="Eliminar(this.parentNode.parentNode.rowIndex)"/>
+				</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>
+				<INPUT type="text" >
+				</td>
+				<td><SELECT NAME="tipo3">
+					<OPTION SELECTED> Tipo de dato <OPTION> Humanos <OPTION> Geograficos <OPTION> Aleatorio
+				</SELECT></td></td>
+				<td>
+				<input type="button" value="Eliminar" onclick="Eliminar(this.parentNode.parentNode.rowIndex)"/>
+				</td>
+			</tr>
+			<tr class="alt">
+				<td>4</td >
+				<td >
+				<INPUT type="text" >
+				</td>
+				<td><SELECT NAME="tipo4">
+					<OPTION SELECTED> Tipo de dato 
+						<OPTION> Humanos 
+						<OPTION> Geograficos 
+						<OPTION> Aleatorio
+				</SELECT></td></td>
+				<td>
+				<input type="button" value="Eliminar" onclick="Eliminar(this.parentNode.parentNode.rowIndex)"/>
+				</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			function Eliminar(i) {
+				document.getElementsByTagName("table")[0].setAttribute("id", "tableid");
+				document.getElementById("tableid").deleteRow(i);
+			}
+
+			function addRow(tableID) {
+
+				var table = document.getElementById(tableID);
+
+				var rowCount = table.rows.length;
+
+				var row = table.insertRow(rowCount);
+
+				var cell1 = row.insertCell(0);
+
+				var element1 = document.createElement("input");
+
+				element1.type = "checkbox";
+
+				cell1.appendChild(element1);
+
+				var cell2 = row.insertCell(1);
+
+				var element2 = document.createElement("input");
+
+				element2.type = "text";
+
+				cell2.appendChild(element2);
+
+			}
+
+		</script>
+
+		<INPUT type="button" value="Add Row" onclick="addRow('dataTable');">
+
+	</body>
+</html>
